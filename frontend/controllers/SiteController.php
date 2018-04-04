@@ -77,12 +77,16 @@ class SiteController extends Controller
     public function actionIndex()
     {
 
+
                 $users = User::find()->all();
                 //$avtoshkoly = Avtoshkoly
 
                 return $this->render('index', [
                     'users' => $users,
                ]);
+
+       
+
     }
 
 
