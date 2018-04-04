@@ -46,5 +46,15 @@ return [
         ],
 
     ],
+
+    'modules' => [
+        'user' => [
+            'class' => 'frontend\modules\user\Module',
+        ],
+        'kiev' => [
+            'class' => 'frontend\modules\kiev\Module',
+        ],
+    ],
+
     'params' => $params,
 ];
