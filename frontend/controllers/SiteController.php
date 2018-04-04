@@ -2,6 +2,8 @@
 namespace frontend\controllers;
 
 
+use frontend\models\User;
+
 use Yii;
 
 use yii\filters\AccessControl;
@@ -74,7 +76,13 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+
+                $users = User::find()->all();
+                //$avtoshkoly = Avtoshkoly
+
+                return $this->render('index', [
+                    'users' => $users,
+               ]);
     }
 
 
