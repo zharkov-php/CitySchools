@@ -9,6 +9,7 @@ use Yii;
  *
  * @property int $id
  * @property string $name
+ * @property string $name_url
  * @property string $logo
  * @property string $card
  * @property string $text
@@ -49,14 +50,14 @@ class Avtoshkoly extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'logo', 'card', 'text', 'adress', 'phone', 'mail', 'price_schools', 'sale', 'lesson_length', 'lessons_grafic', 'additional_lesson', 'autopark', 'category_widget', 'price_widget', 'link', 'site', 'title', 'price_plus', 'lessons_schedule'], 'required'],
+            [['name','name_url', 'logo', 'card', 'text', 'adress', 'phone', 'mail', 'price_schools', 'sale', 'lesson_length', 'lessons_grafic', 'additional_lesson', 'autopark', 'category_widget', 'price_widget', 'link', 'site', 'title', 'price_plus', 'lessons_schedule'], 'required'],
             [['text', 'adress', 'price_schools', 'autopark'], 'string'],
             [['date_register'], 'safe'],
             [['date_birth'], 'integer'],
             [['name', 'logo', 'card', 'phone', 'mail', 'sale', 'lesson_length', 'lessons_grafic', 'additional_lesson', 'zone_widget', 'price_widget', 'link', 'site', 'title', 'price_plus', 'lessons_schedule'], 'string', 'max' => 255],
             [['hide'], 'string', 'max' => 11],
             [['category_widget'], 'string', 'max' => 25],
-            [['name'], 'unique'],
+            [['name', 'name_url'], 'unique'],
         ];
     }
 
@@ -68,6 +69,7 @@ class Avtoshkoly extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
+            'name_url' => 'Name_Url',
             'logo' => 'Logo',
             'card' => 'Card',
             'text' => 'Text',
@@ -93,4 +95,13 @@ class Avtoshkoly extends \yii\db\ActiveRecord
             'lessons_schedule' => 'Lessons Schedule',
         ];
     }
+
+
+         /**
+         * @return mixed
+         */
+    public function getNameUrl()
+    {
+        return ($this->name_url) ? $this->name_url : $this->getId();
+   }
 }
