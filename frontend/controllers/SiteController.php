@@ -1,7 +1,13 @@
 <?php
 namespace frontend\controllers;
 
+
+
+use frontend\models\User;
+
+
 use app\components\AuthHandler;
+
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -84,7 +90,16 @@ class SiteController extends Controller
     public function actionIndex()
     {
 
-        return $this->render('index');
+
+                $users = User::find()->all();
+                //$avtoshkoly = Avtoshkoly
+
+                return $this->render('index', [
+                    'users' => $users,
+               ]);
+
+       
+
     }
 
     /**
