@@ -32,7 +32,7 @@ $this->title = 'My Yii Application';
                     <p><a class="btn btn-default" href="#"><?php echo Html::encode($allPost->title); ?>&raquo;</a></p>
 
                 </div>
-
+        
             <?php endforeach; ?>
         </div>
 
