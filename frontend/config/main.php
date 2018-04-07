@@ -43,6 +43,7 @@ return [
             'showScriptName' => false,
             'rules' => [
                 'avtoshkola/<name_url:\w+>' => 'kiev/avtoshkola/view',
+                'profile/<nickname:\w+>' => 'user/profile/view',
             ],
         ],
 

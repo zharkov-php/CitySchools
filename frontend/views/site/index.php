@@ -1,5 +1,6 @@
 <?php
 
+use yii\helpers\Html;
 use yii\helpers\Url;
 /* @var $this yii\web\View */
 
@@ -27,7 +28,8 @@ $this->title = 'My Yii Application';
                     ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
                     fugiat nulla pariatur.</p>
 
-                <p><a class="btn btn-default" href="<?php echo Url::to(['/user/profile/view', 'id' => $user->id]); ?>">Yii Documentation &raquo;</a></p>
+                <p><a class="btn btn-default" href="<?php echo Url::to(['/user/profile/view',  'nickname' => $user->getNickname()]);  ?>">Yii Documentation &raquo;</a></p>
+                <?php echo Html::encode($user->username); ?>
             </div>
 
             <?php endforeach; ?>
