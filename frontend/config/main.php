@@ -44,6 +44,7 @@ return [
             'rules' => [
                 'avtoshkola/<name_url:\w+>' => 'kiev/avtoshkola/view',
                 'profile/<nickname:\w+>' => 'user/profile/view',
+                'post/<id:\d+>' => 'post/default/view',
             ],
         ],
 
@@ -55,6 +56,9 @@ return [
         ],
         'kiev' => [
             'class' => 'frontend\modules\kiev\Module',
+        ],
+        'post' => [
+            'class' => 'frontend\modules\post\Module',
         ],
     ],
 
