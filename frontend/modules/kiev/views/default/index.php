@@ -32,7 +32,8 @@ $this->title = 'My Yii Application';
                     ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
                     fugiat nulla pariatur.</p>
 
-                <p><a class="btn btn-default" href="<?php echo Url::to(['/kiev/avtoshkola/view', 'name_url' => $avtoshkola->name_url]); ?>"><?php echo Html::encode($avtoshkola->name_url); ?></a></p>
+                <p><a class="btn btn-default" href="<?php echo Url::to(['/kiev/avtoshkola/view', 'name_url' => $avtoshkola->name_url]); ?>"><?php echo Html::encode($avtoshkola->name_url); ?></a> Количество лайков: <span class="likes-count"><?php echo $avtoshkola->countLikes(); ?></span></p>
+
             </div>
 
             <?php endforeach; ?>

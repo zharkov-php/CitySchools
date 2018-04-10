@@ -7,6 +7,7 @@
  */
 
 use yii\helpers\Html;
+use yii\web\JqueryAsset;
 
 $this->title = $kiev_avtoshkola->title_seo;
 //$this->keywords = $kiev_avtoshkola->description_seo;
@@ -20,3 +21,20 @@ $this->title = $kiev_avtoshkola->title_seo;
 ]);
 ?>
 <?php echo Html::encode($kiev_avtoshkola->name); ?>
+<hr>
+<hr>
+
+<div class="col-md-12">
+    Likes: <span class="likes-count"><?php echo $kiev_avtoshkola->countLikes(); ?></span>
+
+    <a href="#" class="btn btn-primary button-unlike <?php echo ($currentUser && $kiev_avtoshkola->isLikedBy($currentUser)) ? "" : "display-none"; ?>" data-id="<?php echo $kiev_avtoshkola->id; ?>">
+        Unlike&nbsp;&nbsp;<span class="glyphicon glyphicon-thumbs-down"></span>
+    </a>
+    <a href="#" class="btn btn-primary button-like <?php echo ($currentUser && $kiev_avtoshkola->isLikedBy($currentUser)) ? "display-none" : ""; ?>" data-id="<?php echo $kiev_avtoshkola->id; ?>">
+        Like&nbsp;&nbsp;<span class="glyphicon glyphicon-thumbs-up"></span>
+    </a>
+
+</div>
+<?php $this->registerJsFile('@web/js/likes.js', [
+    'depends' => JqueryAsset::className(),
+]);?>
