@@ -36,12 +36,12 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
+        ['label' => 'На главную', 'url' => ['/site/index']],
         ['label' => 'Статьи', 'url' => ['/post/default/index']],
         ['label' => 'Автошколы', 'url' => ['/kiev/default/index']],
-        ['label' => 'Коментарии', 'url' => ['/comment/default/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
+        ['label' => 'Комментарии', 'url' => ['/comment/default/index']],
+        ['label' => 'О нас', 'url' => ['/site/about']],
+        ['label' => 'Контакты', 'url' => ['/site/contact']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
