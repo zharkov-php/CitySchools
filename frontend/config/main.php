@@ -42,7 +42,9 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'avtoshkola/<name_url:\w+>' => 'kiev/avtoshkola/view',
+             //   ' ' => 'site/index',
+              //  'kiev/avtoshkoly' => 'kiev/default/index',
+              //  'avtoshkola/<name_url:\w+>' => 'kiev/avtoshkola/view',
                 'profile/<nickname:\w+>' => 'user/profile/view',
                 'post/<id:\d+>' => 'post/default/view',
             ],
@@ -59,6 +61,9 @@ return [
         ],
         'post' => [
             'class' => 'frontend\modules\post\Module',
+        ],
+        'comment' => [
+            'class' => 'frontend\modules\comment\Module',
         ],
     ],
 

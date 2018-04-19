@@ -20,7 +20,7 @@ class CommentForm extends Model
     {
         return [
             [['comment'], 'required'],
-            [['comment'], 'string', 'length' => [3,250]],
+            [['comment'], 'string', 'length' => [10,1000]],
 
         ];
     }
