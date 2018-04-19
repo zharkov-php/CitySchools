@@ -3,17 +3,23 @@
 if(!empty($comments)):?>
 
     <?php foreach($comments as $comment):?>
-        <div class="alert alert-success" role="alert">
 
+        <div class="alert alert-info" role="alert">
 
         <div class="bottom-comment"><!--bottom comment-->
-            <div class="comment-text">
+                <div class="comment-text">
                 <h5><?= Html::encode($comment->user->username);?></h5>
                 <p class="comment-date">
                     <?= Html::encode($comment->getDate());?>
-                </p><p class="para"><?= Html::encode($comment->text); ?></p>
             </div>
         </div>
+
+        <div class="alert alert-info" role="alert">
+<b>
+        </p><p class="para"><?= Html::encode($comment->text); ?></p>
+</b>
+        </div>
+
         </div>
 <hr>
 
@@ -29,7 +35,7 @@ if(!empty($comments)):?>
 <?php if(!Yii::$app->user->isGuest):?>
 
     <div class="leave-comment"><!--leave comment-->
-        <h4>Оставьте комментарий к автошколе <?= Html::encode($kiev_avtoshkola->name); ?> : </h4>
+        <h4>Оставьте комментарий автошколе <?php echo '" ' . Html::encode($kiev_avtoshkola->name) . ' "'; ?> : </h4>
         <?php if(Yii::$app->session->getFlash('comment')):?>
             <div class="alert alert-success" role="alert">
                 <?= Yii::$app->session->getFlash('comment'); ?>

@@ -115,4 +115,5 @@ class Comment extends \yii\db\ActiveRecord
         return $this->hasMany(Comment::className(), ['avtoshkoly_id'=>'id']);
     }
 
+
 }
