@@ -2,6 +2,7 @@
 
 namespace frontend\modules\post\controllers;
 use Yii;
+use yii\data\Pagination;
 use yii\web\Controller;
 use yii\web\UploadedFile;
 use frontend\modules\post\models\forms\PostForm;
@@ -16,8 +17,17 @@ class DefaultController extends Controller
     public function actionIndex()
     {
         $allPosts = Post::find()->all();
+        $query = Post::find();
+        $countQuery = clone $query;
+        $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize' => 3]);
+        $pages->pageSizeParam = false;
+        $models = $query->offset($pages->offset)
+            ->limit($pages->limit)
+            ->all();
         return $this->render('index',[
-            'allPosts' => $allPosts
+            'allPosts' => $allPosts,
+            'models' => $models,
+            'pages' => $pages,
 
         ]);
     }

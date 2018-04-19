@@ -30,8 +30,8 @@ class CommentForm extends Model
         $comment->text = $this->comment;
         $comment->user_id = Yii::$app->user->id;
         $comment->avtoshkoly_id = $avtoshkoly_id;
-        $comment->name = 'Dron';
-        $comment->email = 'dron@dron.com';
+        $comment->name = Yii::$app->user->identity->username;
+        $comment->email = Yii::$app->user->identity->email;
         $comment->status = 0;
         $comment->date = date('Y-m-d');
         return $comment->save();

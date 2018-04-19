@@ -19,21 +19,35 @@ $this->title = 'My Yii Application';
 
         <div class="row">
             <?php use yii\helpers\Html;
+            use yii\widgets\LinkPager;?>
 
-            foreach ($allPosts as $allPost): ?>
+
+
+              <?php foreach ($models as $model): ?>
+
+
                 <div class="col-lg-4">
-                    <h2> <?php echo $allPost->title; ?></h2>
+                    <h2> <?php echo $model->title; ?></h2>
 
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                         dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                         ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
                         fugiat nulla pariatur.</p>
 
-                    <p><a class="btn btn-default" href="#"><?php echo Html::encode($allPost->title); ?>&raquo;</a></p>
+                    <p><a class="btn btn-default" href="#"><?php echo Html::encode($model->title); ?>&raquo;</a></p>
 
                 </div>
-        
+
             <?php endforeach; ?>
+            <?php  // отображаем ссылки на страницы
+            echo LinkPager::widget([
+                'pagination' => $pages,
+            ]);?>
+
+
+
+
+
         </div>
 
     </div>
