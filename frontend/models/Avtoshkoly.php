@@ -155,4 +155,40 @@ class Avtoshkoly extends \yii\db\ActiveRecord
         $redis = Yii::$app->redis;
         return $redis->sismember("schools:{$this->getId()}:likes", $user->getId());
     }
+
+
+/////////////////////////////////////////////////////////////////
+///
+    public function getCommentshasmany()
+    {
+        return $this->hasMany(Comment::className(), ['avtoshkoly_id'=>'id']);
+    }
+
+    public function getAvtoshkolyComments()
+    {
+        return $this->getComments()->where(['status' => 1])->all();
+    }
+
+    ////////////////
+    public function getDate()
+    {
+        return Yii::$app->formatter->asDate($this->date);
+    }
+    public function getComments()
+    {
+        return $this->hasMany(Comment::className(), ['avtoshkoly_id'=>'id']);
+    }
+
+    public function getArticleComments()
+    {
+        return $this->getComments()->where(['status'=>1])->all();
+    }
+
+    public function getAuthor()
+    {
+        return $this->hasOne(User::className(), ['id'=>'user_id']);
+    }
+
+
+
 }
