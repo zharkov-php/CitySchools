@@ -11,6 +11,7 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+    'language' => 'ru-RU',
     'components' => [
         'request' => [
             'baseUrl' => '',
@@ -63,6 +64,9 @@ return [
         ],
         'comment' => [
             'class' => 'frontend\modules\comment\Module',
+        ],
+        'instructors' => [
+            'class' => 'frontend\modules\instructors\Module',
         ],
     ],
     'params' => $params,

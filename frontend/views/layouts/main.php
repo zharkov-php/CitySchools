@@ -39,6 +39,17 @@ AppAsset::register($this);
         ['label' => 'На главную', 'url' => ['/site/index']],
         ['label' => 'Статьи', 'url' => ['/post/default/index']],
         ['label' => 'Автошколы', 'url' => ['/kiev/default/index']],
+        ['label' => 'Инструктора',
+            'url' => ['/instructors/kiev/index'],
+            'options'=>['class'=>'dropdown'],
+        'template' => '<a href="{url}" class="url-class">{label}</a>',
+        'items' => [
+            ['label' => 'Украина', 'url' => ['/instructors/default/index']],
+            ['label' => 'Киев', 'url' => ['/instructors/kiev/index']],
+
+]
+		],
+
         ['label' => 'Комментарии', 'url' => ['/comment/default/index']],
         ['label' => 'О нас', 'url' => ['/site/about']],
         ['label' => 'Контакты', 'url' => ['/site/contact']],
