@@ -9,7 +9,7 @@ use yii\web\Controller;
 /**
  * Default controller for the `instructors` module
  */
-class DefaultController extends Controller
+class DefaultController extends InstructorController
 {
     /**
      * Renders the index view for the module
@@ -30,4 +30,6 @@ class DefaultController extends Controller
             'pages' => $pages,
         ]);
     }
+
+
 }

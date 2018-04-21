@@ -12,7 +12,7 @@ use yii\web\Controller;
  * Time: 22:26
  */
 
-class KievController extends Controller
+class KievController extends InstructorController
 {
     /**
      * Renders the index view for the module
@@ -34,4 +34,6 @@ class KievController extends Controller
             'pages' => $pages,
         ]);
     }
+
+
 }

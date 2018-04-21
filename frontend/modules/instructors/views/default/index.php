@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="btn btn-warning" ><?php echo $instructor->car; ?></div></center><br>
 
 
-            <center><p><a class="btn btn-success" href="">Смотреть профиль  &raquo;</a></p></center>
+                <center><p><a class="btn btn-success" href="<?php echo Url::to(['/instructors/instructor/view', 'id' => $instructor->id]); ?>">Смотреть профиль  &raquo;</a></p></center>
 
         </div>
         </div>
