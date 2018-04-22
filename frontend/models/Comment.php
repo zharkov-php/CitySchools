@@ -63,13 +63,6 @@ class Comment extends \yii\db\ActiveRecord
 
     //////////////////////////////////////////
     ///
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getAvtoshkola()
-    {
-        return $this->hasOne(Avtoshkoly::className(), ['id' => 'avtoshkoly_id']);
-    }
 
     /**
      * @return \yii\db\ActiveQuery
@@ -89,11 +82,6 @@ class Comment extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Avtoshkoly::className(), ['id' => 'avtoshkoly_id']);
     }
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-
-
 
     public function isAllowed()
     {
@@ -110,10 +98,7 @@ class Comment extends \yii\db\ActiveRecord
         return $this->save(false);
     }
 
-    public function getComments()
-    {
-        return $this->hasMany(Comment::className(), ['avtoshkoly_id'=>'id']);
-    }
+
 
 
 }
