@@ -212,14 +212,6 @@ class User extends ActiveRecord implements IdentityInterface
         return ($this->nickname) ? $this->nickname : $this->getId();
     }
 
-    public function getIdd()
-    {
-        return ($this->id) ? $this->id : $this->getId();
-    }
-
-
-
-
     ////////////////////////////////////
     /// для подписки пользователей
     /**
@@ -313,11 +305,5 @@ class User extends ActiveRecord implements IdentityInterface
     }
 ///////////////////////////////////////////////////////////
 ///
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getComments()
-    {
-        return $this->hasMany(Comment::className(), ['user_id' => 'id']);
-    }
+
 }

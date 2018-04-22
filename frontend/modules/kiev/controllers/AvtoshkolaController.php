@@ -52,15 +52,6 @@ class AvtoshkolaController extends Controller
 
     }
 
-  //  public function actionView($id)
- //   {
-  //      return $this->render('view', [
-   //         'kiev_avtoshkola' => $this->findAvtoshkola($id),
-   //     ]);
-  //  }
-
-
-
 
     /**
      * @param integer $id
@@ -74,26 +65,6 @@ class AvtoshkolaController extends Controller
         }
         throw new NotFoundHttpException();
     }
-    /**
-     * @param integer $name_url
-     * @return Avtoshkoly
-     * @throws NotFoundHttpException
-     */
- // private function findAvtoshkola($name_url)
-//{
-  //  if ($kiev_avtoshkola = Avtoshkoly::find()->where(['name_url' => $name_url])->one()) {
-   //     return $kiev_avtoshkola;
-  //  }
-  //  throw new NotFoundHttpException();
-//}
-
-   // private function findAvtoshkolaId($id)
- //   {
-  //      if ($kiev_avtoshkolaId = Avtoshkoly::find()->where(['id' => $id])->one()) {
-   //         return $kiev_avtoshkolaId;
-   //     }
-  //      throw new NotFoundHttpException();
-  //  }
 
     public function actionLike()
     {
