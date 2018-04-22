@@ -88,4 +88,8 @@ class Instructor extends \yii\db\ActiveRecord
             'description_seo' => 'Description Seo',
         ];
     }
+    public function getComments()
+    {
+        return $this->hasMany(CommentsInstructor::className(), ['instructor_id'=>'id']);
+    }
 }

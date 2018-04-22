@@ -20,3 +20,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 </div>
+<div class="comment-create">
+
+    <h1><?= Html::encode($this->title) ?></h1>
+
+    <?= $this->render('comment', [
+        'model' => $model,
+        'instructor' => $instructor,
+        'article' => $article,
+        'comments' => $comments,
+        'commentsInstructorForm' => $commentsInstructorForm
+    ])?>
+
+</div>
