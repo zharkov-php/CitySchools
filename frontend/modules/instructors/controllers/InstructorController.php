@@ -10,6 +10,7 @@ use frontend\modules\instructors\models\InstructorSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\Response;
 
 /**
  * InstructorController implements the CRUD actions for Instructor model.
@@ -80,6 +81,44 @@ class InstructorController extends Controller
         }
     }
 
+    //////////////////////////////////////////
+/// LIKE and DISLIKE
+
+    public function actionLike()
+    {
+        if (Yii::$app->user->isGuest) {
+            return $this->redirect(['/user/default/login']);
+        }
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        $id = Yii::$app->request->post('id');
+        $post = $this->findInstructor($id);
+        /* @var $currentUser User */
+        $currentUser = Yii::$app->user->identity;
+        $post->like($currentUser);
+        return [
+            'success' => true,
+            'likesCount' => $post->countLikes(),
+        ];
+    }
+    public function actionUnlike()
+    {
+        if (Yii::$app->user->isGuest) {
+            return $this->redirect(['/user/default/login']);
+        }
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        $id = Yii::$app->request->post('id');
+        /* @var $currentUser User */
+        $currentUser = Yii::$app->user->identity;
+        $post = $this->findInstructor($id);
+        $post->unLike($currentUser);
+        return [
+            'success' => true,
+            'likesCount' => $post->countLikes(),
+        ];
+    }
+
+    //////////////////////////////////////////
+/// LIKE and DISLIKE
 
 
 

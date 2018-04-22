@@ -3,8 +3,11 @@
 namespace frontend\modules\instructors\controllers;
 
 use frontend\models\Instructor;
+use Yii;
 use yii\data\Pagination;
 use yii\web\Controller;
+use yii\web\NotFoundHttpException;
+use yii\web\Response;
 
 /**
  * Default controller for the `instructors` module
@@ -30,6 +33,11 @@ class DefaultController extends InstructorController
             'pages' => $pages,
         ]);
     }
+
+
+
+
+
 
 
 }

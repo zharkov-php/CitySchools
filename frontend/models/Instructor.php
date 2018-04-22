@@ -92,4 +92,57 @@ class Instructor extends \yii\db\ActiveRecord
     {
         return $this->hasMany(CommentsInstructor::className(), ['instructor_id'=>'id']);
     }
+
+
+    //////////////////////////////////////////
+/// LIKE and DISLIKE
+    /**
+     * Like current post by given user
+     * @param \frontend\models\User $user
+     */
+    public function like(User $user)
+    {
+        /* @var $redis Connection */
+        $redis = Yii::$app->redis;
+        $redis->sadd("instructors:{$this->getId()}:likes", $user->getId());
+        $redis->sadd("user:{$user->getId()}:likes", $this->getId());
+    }
+    /**
+     * Unlike current post by given user
+     * @param \frontend\models\User $user
+     */
+    public function unLike(User $user)
+    {
+        /* @var $redis Connection */
+        $redis = Yii::$app->redis;
+        $redis->srem("instructors:{$this->getId()}:likes", $user->getId());
+        $redis->srem("user:{$user->getId()}:likes", $this->getId());
+    }
+    public function getId()
+    {
+        return $this->id;
+    }
+    /**
+     * @return mixed
+     */
+    public function countLikes()
+    {
+        /* @var $redis Connection */
+        $redis = Yii::$app->redis;
+        return $redis->scard("instructors:{$this->getId()}:likes");
+    }
+    /**
+     * Check whether given user liked current post
+     * @param \frontend\models\User $user
+     * @return integer
+     */
+    public function isLikedBy(User $user)
+    {
+        /* @var $redis Connection */
+        $redis = Yii::$app->redis;
+        return $redis->sismember("instructors:{$this->getId()}:likes", $user->getId());
+    }
+    /////////////////////////////////////////////////////////////////
+/// LIKE and DISLIKE
+
 }
