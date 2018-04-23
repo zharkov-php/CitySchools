@@ -49,8 +49,16 @@ AppAsset::register($this);
 
 ]
 		],
+        ['label' => 'Комментарии',
+            'url' => ['/comment/default/index'],
+            'options'=>['class'=>'dropdown'],
+            'template' => '<a href="{url}" class="url-class">{label}</a>',
+            'items' => [
+                ['label' => 'Автошколы', 'url' => ['/comment/default/index']],
+                ['label' => 'Инструктора', 'url' => ['/comment_instructor/default/index']],
 
-        ['label' => 'Комментарии', 'url' => ['/comment/default/index']],
+            ]
+        ],
         ['label' => 'О нас', 'url' => ['/site/about']],
         ['label' => 'Контакты', 'url' => ['/site/contact']],
     ];
