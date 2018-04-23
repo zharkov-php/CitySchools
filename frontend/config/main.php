@@ -68,6 +68,9 @@ return [
         'instructors' => [
             'class' => 'frontend\modules\instructors\Module',
         ],
+        'comment_instructor' => [
+            'class' => 'frontend\modules\comment_instructor\Module',
+        ],
     ],
     'params' => $params,
 ];

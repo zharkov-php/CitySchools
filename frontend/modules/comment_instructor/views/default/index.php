@@ -1,11 +1,7 @@
-
-
-
-
 <?php use yii\helpers\Html;
 use yii\widgets\LinkPager;
 ?>
-<center><h1>Все комментарии про Автошколы: </h1></center>
+<center><h1>Все комментарии про Инструкторов: </h1></center>
 <?php foreach ($allComments as $comment): ?>
 
     <div class="alert alert-info" role="alert">
@@ -14,7 +10,7 @@ use yii\widgets\LinkPager;
                 <?php echo 'Автор:  '. '<b>' . Html::encode($comment->name). '</b>'?>
             </div>
             <div class="col-md-3">
-                <?php echo 'ID - автошколы ' . '<b>' . Html::encode($comment->avtoshkoly_id)  . '</b>'?>
+                <?php echo 'ID - инструктора ' . '<b>' . Html::encode($comment->instructor_id)  . '</b>'?>
             </div>
             <div class="col-md-3">
                 <?php echo $comment->getDate() ?>
