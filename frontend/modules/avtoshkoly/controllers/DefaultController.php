@@ -1,6 +1,6 @@
 <?php
 
-namespace frontend\modules\kiev\controllers;
+namespace frontend\modules\avtoshkoly\controllers;
 
 use frontend\models\Avtoshkoly;
 use Yii;

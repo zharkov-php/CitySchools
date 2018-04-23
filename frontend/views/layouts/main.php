@@ -38,7 +38,7 @@ AppAsset::register($this);
     $menuItems = [
         ['label' => 'На главную', 'url' => ['/site/index']],
         ['label' => 'Статьи', 'url' => ['/post/default/index']],
-        ['label' => 'Автошколы', 'url' => ['/kiev/default/index']],
+        ['label' => 'Автошколы', 'url' => ['/avtoshkoly/default/index']],
         ['label' => 'Инструктора',
             'url' => ['/instructors/kiev/index'],
             'options'=>['class'=>'dropdown'],
