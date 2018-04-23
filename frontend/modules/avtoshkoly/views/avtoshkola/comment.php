@@ -45,7 +45,7 @@ if(!empty($comments)):?>
         <?php endif;?>
 
         <?php $form = \yii\widgets\ActiveForm::begin([
-            'action'=>['/kiev/avtoshkola/comment', 'id' => $article->id],
+            'action'=>['/avtoshkoly/avtoshkola/comment', 'id' => $article->id],
             'options'=>['class'=>'form-horizontal contact-form', 'role'=>'form']])?>
         <div class="form-group">
             <div class="col-md-12">

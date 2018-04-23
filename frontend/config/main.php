@@ -57,8 +57,8 @@ return [
         'user' => [
             'class' => 'frontend\modules\user\Module',
         ],
-        'kiev' => [
-            'class' => 'frontend\modules\kiev\Module',
+        'avtoshkoly' => [
+            'class' => 'frontend\modules\avtoshkoly\Module',
         ],
         'post' => [
             'class' => 'frontend\modules\post\Module',

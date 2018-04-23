@@ -6,7 +6,7 @@
  * Time: 23:29
  */
 
-namespace frontend\modules\kiev\controllers;
+namespace frontend\modules\avtoshkoly\controllers;
 
 use frontend\models\Comment;
 use frontend\models\CommentForm;
@@ -109,7 +109,7 @@ class AvtoshkolaController extends Controller
             if($model->saveComment($id))
             {
                 Yii::$app->getSession()->setFlash('comment', 'Вы оставили комментарий');
-                return $this->redirect(['/kiev/avtoshkola/view','id'=>$id]);
+                return $this->redirect(['/avtoshkoly/avtoshkola/view','id'=>$id]);
             }
         }
     }

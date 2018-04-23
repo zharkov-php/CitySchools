@@ -4,7 +4,7 @@ $(document).ready(function () {
         var params = {
             'id': $(this).attr('data-id')
         };
-        $.post('/kiev/avtoshkola/like', params, function(data) {
+        $.post('/avtoshkoly/avtoshkola/like', params, function(data) {
             if (data.success) {
                 button.hide();
                 button.siblings('.button-unlike').show();
@@ -19,7 +19,7 @@ $(document).ready(function () {
         var params = {
             'id': $(this).attr('data-id')
         };
-        $.post('/kiev/avtoshkola/unlike', params, function(data) {
+        $.post('/avtoshkoly/avtoshkola/unlike', params, function(data) {
             if (data.success) {
                 button.hide();
                 button.siblings('.button-like').show();

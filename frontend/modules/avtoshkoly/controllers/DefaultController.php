@@ -1,27 +1,39 @@
 <?php
 
-namespace frontend\modules\kiev\controllers;
+namespace frontend\modules\avtoshkoly\controllers;
 
 use frontend\models\Avtoshkoly;
 use Yii;
+use yii\data\Pagination;
 use yii\web\Controller;
+use yii\web\NotFoundHttpException;
 use yii\web\Response;
 
 /**
  * Default controller for the `kiev` module
  */
-class DefaultController extends Controller
+class DefaultController extends AvtoshkolaController
 {
+
     /**
      * Renders the index view for the module
      * @return string
      */
+
     public function actionIndex()
     {
-        $avtoshkoly = Avtoshkoly::find()->all();
+
+        $avtoshkoly = Avtoshkoly::find()->orderBy('id DESC');
+        $countQuery = clone $avtoshkoly;
+        $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize' => 10]);
+        $pages->pageSizeParam = false;
+        $avtoshkoly = $countQuery->offset($pages->offset)
+            ->limit($pages->limit)
+            ->all();
 
         return $this->render('index', [
-            'avtoshkoly' => $avtoshkoly
+            'avtoshkoly' => $avtoshkoly,
+            'pages' => $pages,
         ]);
     }
 
@@ -67,4 +79,5 @@ class DefaultController extends Controller
             'likesCount' => $post->countLikes(),
         ];
     }
+
 }

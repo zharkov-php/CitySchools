@@ -1,6 +1,6 @@
 <?php
 
-namespace frontend\modules\kiev;
+namespace frontend\modules\avtoshkoly;
 
 /**
  * kiev module definition class
@@ -10,7 +10,7 @@ class Module extends \yii\base\Module
     /**
      * @inheritdoc
      */
-    public $controllerNamespace = 'frontend\modules\kiev\controllers';
+    public $controllerNamespace = 'frontend\modules\avtoshkoly\controllers';
 
     /**
      * @inheritdoc
