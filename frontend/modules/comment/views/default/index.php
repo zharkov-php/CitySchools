@@ -33,6 +33,6 @@ use yii\widgets\LinkPager;
 <?php endforeach;?>
 
 <?php  // отображаем ссылки на страницы
-echo LinkPager::widget([
+echo '<center>' .  LinkPager::widget([
     'pagination' => $pages,
-]);?>
+]) . '<center>';?>
