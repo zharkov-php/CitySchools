@@ -73,9 +73,11 @@ AppAsset::register($this);
         ['label' => 'Контакты', 'url' => ['/site/contact']],
     ];
     if (Yii::$app->user->isGuest) {
+
         $menuItems[] = ['label' => 'Регистрация', 'url' => ['/user/default/signup']];
         $menuItems[] = ['label' => 'Вход', 'url' => ['/user/default/login']];
-    } else {
+
+} else {
 
       //  $menuItems[] = ['label' => 'My profile', 'url' => ['/user/profile/view', 'nickname' => Yii::$app->user->identity->getNickname()]];
       //  $menuItems[] = ['label' => 'Create post', 'url' => ['/post/default/create']];

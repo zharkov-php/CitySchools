@@ -52,6 +52,7 @@ return [
         ],
 
     ],
+
     'modules' => [
         'user' => [
             'class' => 'frontend\modules\user\Module',
@@ -72,5 +73,6 @@ return [
             'class' => 'frontend\modules\comment_instructor\Module',
         ],
     ],
+
     'params' => $params,
 ];
