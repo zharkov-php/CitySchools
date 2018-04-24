@@ -28,7 +28,7 @@ $this->title = 'My Yii Application';
                         ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
                         fugiat nulla pariatur.</p>
 
-                    <p><a class="btn btn-default" href="<?php echo Url::to(['/post/post/view', 'id' => $post->id]); ?>"><?php echo Html::encode($post->title); ?>&raquo;</a></p>
+                    <p><a class="btn btn-default" href="<?php echo Url::to(['/post/post/view', 'id' => $post->id]); ?>">Читать далее&raquo;</a></p>
 
                 </div>
 
