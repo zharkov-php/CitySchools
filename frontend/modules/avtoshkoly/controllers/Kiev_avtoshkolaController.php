@@ -20,7 +20,7 @@ class Kiev_avtoshkolaController extends DefaultController
      */
     public function actionIndex()
     {
-        $avtoshkoly = Avtoshkoly::find()->where('city=1');
+        $avtoshkoly = Avtoshkoly::find()->where('city=1')->orderBy('rand()');
         $countQuery = clone $avtoshkoly;
         $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize' => 10]);
         $pages->pageSizeParam = false;

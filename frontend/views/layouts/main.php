@@ -38,7 +38,6 @@ AppAsset::register($this);
     $menuItems = [
         ['label' => 'На главную', 'url' => ['/site/index']],
         ['label' => 'Статьи', 'url' => ['/post/default/index']],
-       // ['label' => 'Автошколы', 'url' => ['/avtoshkoly/default/index']],
 
         ['label' => 'Автошколы',
             'url' => ['/comment/default/index'],
@@ -74,8 +73,8 @@ AppAsset::register($this);
         ['label' => 'Контакты', 'url' => ['/site/contact']],
     ];
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/user/default/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/user/default/login']];
+        $menuItems[] = ['label' => 'Регистрация', 'url' => ['/user/default/signup']];
+        $menuItems[] = ['label' => 'Вход', 'url' => ['/user/default/login']];
     } else {
 
       //  $menuItems[] = ['label' => 'My profile', 'url' => ['/user/profile/view', 'nickname' => Yii::$app->user->identity->getNickname()]];

@@ -23,7 +23,7 @@ class DefaultController extends AvtoshkolaController
     public function actionIndex()
     {
 
-        $avtoshkoly = Avtoshkoly::find()->orderBy('id DESC');
+        $avtoshkoly = Avtoshkoly::find()->orderBy('rand()');
         $countQuery = clone $avtoshkoly;
         $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize' => 10]);
         $pages->pageSizeParam = false;
