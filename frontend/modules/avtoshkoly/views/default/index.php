@@ -10,40 +10,30 @@ $this->title = 'My Yii Application';
 ?>
 <div class="site-index">
 
-    <div class="jumbotron">
-        <h1>Все автошколы Киева:</h1>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
+        <center><h1>Все автошколы Киева:</h1></center>
 
     <div class="body-content">
-
         <div class="row">
-
             <?php foreach ($avtoshkoly as $avtoshkola): ?>
+            <div class="col-md-4">                    <center><h4><b><?php echo '"' . Html::encode($avtoshkola->name) . '"'; ?></b></h4></center>
 
+                <div class="thumbnail">
 
-                <div class="col-lg-4">
-                <h2><?php echo Html::encode($avtoshkola->name); ?></h2>
+                    <div class="btn btn-warning"><?php echo Html::encode($avtoshkola->category_widget);  ?></div>
+                    <div class="btn btn-danger" ><?php echo 'Обучения от ' . $avtoshkola->price . ' грн'; ?></div>
+                    <a href="<?php echo Url::to(['/avtoshkoly/avtoshkola/view', 'id' => $avtoshkola->id]); ?>"> <img src="<?php echo Yii::$app->request->baseUrl . $avtoshkola->card; ?>" /></a>
+                        <div class="btn btn-primary"><?php if ($avtoshkola->city == 1){
+                                echo 'Киев';
+                            }else{
+                                echo 'город не указан';
+                            } ?></div>
 
+                    <a class="btn btn-info">Количество лайков: <span class="likes-count"><?php echo $avtoshkola->countLikes(); ?></span></a><br>
+                    <a class="btn btn-success" href="<?php echo Url::to(['/avtoshkoly/avtoshkola/view', 'id' => $avtoshkola->id]); ?>">Смотреть АвтоШколу &raquo;</a>
 
-                    <?php if ($avtoshkola->city == 1){
-                        echo 'Киев';
-                    }else{
-                        echo 'город не указан';
-                    } ?>
-
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="<?php echo Url::to(['/avtoshkoly/avtoshkola/view', 'id' => $avtoshkola->id]); ?>"><?php echo Html::encode($avtoshkola->name_url); ?></a> Количество лайков: <span class="likes-count"><?php echo $avtoshkola->countLikes(); ?></span></p>
-
-            </div>
+</div>
+</div>
 
             <?php endforeach; ?>
 
