@@ -14,10 +14,8 @@ use yii\widgets\LinkPager;
 
 $this->title = 'My Yii Application';
 ?>
-    <div class="site-index">
-        <div class="jumbotron">
-            <h1>Все автошколы Киева:</h1>
-        </div>
+    <center><h1>Киев и Киевская область:</h1></center><hr>
+
 <?php include 'zone_Kiev_widget.php'; ?><br>
 <?php include 'zone_Kiev_Oblast_widget.php'; ?><br>
 

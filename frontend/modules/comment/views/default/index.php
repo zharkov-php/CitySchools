@@ -5,7 +5,7 @@
 <?php use yii\helpers\Html;
 use yii\widgets\LinkPager;
 ?>
-<center><h1>Все комментарии про Автошколы: </h1></center>
+<center><h1>Все Отзывы об Автошколах: </h1></center>
 <?php foreach ($allComments as $comment): ?>
 
     <div class="alert alert-info" role="alert">
@@ -20,14 +20,16 @@ use yii\widgets\LinkPager;
                 <?php echo $comment->getDate() ?>
             </div>
             <div class="col-md-3">
-                <?php echo 'Комментарий: № ' .'<b>' . Html::encode($comment->id). '</b>'?>
+                <?php echo 'Отзыв: № ' .'<b>' . Html::encode($comment->id). '</b>'?>
             </div>
             <b>
         </div>
         <div class="alert alert-info" role="alert">
             <?= Html::encode($comment->text); ?>
+
             </b>
         </div>
+        <div class="fb-like" data-href="<?= Html::encode($comment->text); ?>" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
     </div>
     <hr>
 <?php endforeach;?>

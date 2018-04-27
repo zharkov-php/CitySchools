@@ -11,13 +11,13 @@ $this->title = 'My Yii Application';
 <div class="site-index">
 
 
-        <center><h1>Все автошколы Украины:</h1></center>
+        <center><h1>Все автошколы Украины:</h1></center><hr>
 
     <div class="body-content">
         <div class="row">
             <?php foreach ($avtoshkoly as $avtoshkola): ?>
             <div class="col-md-3">
-                <center><h4><b><?php echo '"' . Html::encode($avtoshkola->name) . '"'; ?></b></h4></center>
+                <center><h4><b><?php echo '" ' . Html::encode($avtoshkola->name) . ' "'; ?></b></h4></center>
                 <center> <div class="btn btn-warning"><?php echo Html::encode($avtoshkola->category_widget);  ?></div>
                     <a href="<?php echo Url::to(['/avtoshkoly/avtoshkola/view', 'id' => $avtoshkola->id]); ?>" class="btn btn-info">Like: <span class="likes-count"><?php echo $avtoshkola->countLikes(); ?></span></a>
                 </center>

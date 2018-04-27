@@ -186,3 +186,53 @@ a.desc:after {
 
 }
 
+
+.icon-bar1 {
+    position: fixed;
+    top: 67%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+/* Style the icon bar links */
+.icon-bar1 a {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 15px;
+}
+
+/* Style the social media icons with color, if you want */
+.icon-bar1 a:hover {
+    background-color: #222222;
+}
+
+.facebook1 {
+    background: rgba(59, 89, 152, 0.31);
+    color: white;
+}
+
+.twitter1 {
+    background: rgba(85, 172, 238, 0.32);
+    color: white;
+}
+
+.google1 {
+    background: rgba(221, 75, 57, 0.31);
+    color: white;
+}
+
+.linkedin1 {
+    background: rgba(0, 123, 181, 0.32);
+    color: white;
+}
+
+.youtube1 {
+    background: rgba(187, 0, 0, 0.32);
+    color: white;
+}
+
+

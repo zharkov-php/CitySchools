@@ -7,7 +7,7 @@
  */
 ?>
 <div id="myBtnContainer">
-    <button class="btn btn-default  active" onclick="filterSelection('all')"> Все раены</button>
+    <button class="btn btn-default  active" onclick="filterSelection('all')"> Все раёны</button>
     <button class="btn btn-default" onclick="filterSelection(' obolonskiy')">Оболонский</button>
     <button class="btn btn-default" onclick="filterSelection('podolskiy')">Подольский</button>
     <button class="btn btn-default" onclick="filterSelection('shevchenkovskiy')">Шевченковский</button>

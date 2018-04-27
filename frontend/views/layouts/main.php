@@ -21,6 +21,9 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
+    <!-- Load font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <?php $this->head() ?>
 </head>
 <body>
@@ -44,8 +47,8 @@ AppAsset::register($this);
             'options'=>['class'=>'dropdown'],
             'template' => '<a href="{url}" class="url-class">{label}</a>',
             'items' => [
-                ['label' => 'Все', 'url' => ['/avtoshkoly/default/index']],
-                ['label' => 'Киев', 'url' => ['/avtoshkoly/kiev_avtoshkola/index']],
+                ['label' => 'Все автошколы Украины', 'url' => ['/avtoshkoly/default/index']],
+                ['label' => 'Киев и Киевская область', 'url' => ['/avtoshkoly/kiev_avtoshkola/index']],
 
             ]
         ],
@@ -54,18 +57,18 @@ AppAsset::register($this);
             'options'=>['class'=>'dropdown'],
         'template' => '<a href="{url}" class="url-class">{label}</a>',
         'items' => [
-            ['label' => 'Украина', 'url' => ['/instructors/default/index']],
-            ['label' => 'Киев', 'url' => ['/instructors/kiev/index']],
+            ['label' => 'Все инструктора Украины', 'url' => ['/instructors/default/index']],
+            ['label' => 'Киев и Киевская область', 'url' => ['/instructors/kiev/index']],
 
 ]
 		],
-        ['label' => 'Комментарии',
+        ['label' => 'Отзывы',
             'url' => ['/comment/default/index'],
             'options'=>['class'=>'dropdown'],
             'template' => '<a href="{url}" class="url-class">{label}</a>',
             'items' => [
-                ['label' => 'Автошколы', 'url' => ['/comment/default/index']],
-                ['label' => 'Инструктора', 'url' => ['/comment_instructor/default/index']],
+                ['label' => 'Все Отзывы об Автошколах', 'url' => ['/comment/default/index']],
+                ['label' => 'Все Отзывы об Инструкторов', 'url' => ['/comment_instructor/default/index']],
 
             ]
         ],
@@ -113,7 +116,14 @@ AppAsset::register($this);
     </div>
 </footer>
 
-
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.12&appId=2083460755244270&autoLogAppEvents=1';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
 <?php $this->endBody() ?>
 </body>

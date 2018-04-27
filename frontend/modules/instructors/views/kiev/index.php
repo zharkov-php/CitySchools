@@ -8,7 +8,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 
-    <center><h1><b>Инструктора Киева: </b></h1></center><hr>
+    <center><h1><b>Инструктора Киева и Киевской области: </b></h1></center><hr>
 
 
     <div class="row">

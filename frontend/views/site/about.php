@@ -7,6 +7,7 @@ use yii\helpers\Html;
 $this->title = 'About';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
 <div class="site-about">
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-8">
@@ -54,4 +55,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 « Они лучшие!!!» Добро пожаловать!!!</b></h4>        </div>
         <div class="col-xs-6 col-md-4">ТУТ БЛОКИ!!!</div>
     </div>
+</div>
+<!-- The social media icon bar -->
+<div class="icon-bar1">
+    <a href="#" class="facebook1"><i class="fa fa-facebook"></i></a>
+    <a href="#" class="twitter1"><i class="fa fa-twitter"></i></a>
+    <a href="#" class="google1"><i class="fa fa-google"></i></a>
+    <a href="#" class="linkedin1"><i class="fa fa-linkedin"></i></a>
+    <a href="#" class="youtube1"><i class="fa fa-youtube"></i></a>
 </div>
