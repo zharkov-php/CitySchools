@@ -22,7 +22,7 @@ class Kiev_avtoshkolaController extends DefaultController
     {
         $avtoshkoly = Avtoshkoly::find()->where('city=1')->orderBy('rand()');
         $countQuery = clone $avtoshkoly;
-        $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize' => 10]);
+        $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize' => 100]);
         $pages->pageSizeParam = false;
         $avtoshkoly = $countQuery->offset($pages->offset)
             ->limit($pages->limit)
