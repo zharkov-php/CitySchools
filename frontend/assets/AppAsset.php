@@ -15,6 +15,7 @@ class AppAsset extends AssetBundle
         'css/site.css',
     ];
     public $js = [
+        'js/sort_district_Kiev.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

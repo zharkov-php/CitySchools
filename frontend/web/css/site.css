@@ -118,3 +118,71 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
+
+
+
+
+
+
+.filterDiv {
+    float: left;
+    background-color: #2196F3;
+    color: #ffffff;
+    width: 100px;
+    line-height: 100px;
+    text-align: center;
+    margin: 2px;
+    display: none; /* Hidden by default */
+}
+.filterDiv5 {
+    float: left;
+    background-color: #fdfcff;
+    color: #010100;
+    width: 250px;
+    line-height: 30px;
+    text-align: center;
+    margin: 5px;
+    display: none; /* Hidden by default */
+}
+
+
+/* The "show" class is added to the filtered elements */
+.show {
+    display: block;
+}
+
+
+
+/* Add a light grey background on mouse-over */
+.btn:hover {
+    background-color: #ddd;
+}
+
+/* Add a dark background to the active button */
+.btn.active {
+    background-color: #666;
+    color: white;
+}
+
+
+
+.chip {
+    display: inline-block;
+    padding: 0 75px;
+    height: 200px;
+    font-size: 32px;
+    line-height: 50px;
+    border-radius: 50px;
+    background-color: #f1f1f1;
+}
+
+.chip img {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+
+}
+
